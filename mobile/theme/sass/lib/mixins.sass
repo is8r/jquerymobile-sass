@@ -1,0 +1,98 @@
+//
+// name:    Mixin for Sass for jQuery Mobile v1.1.0
+// version: 1.0
+// auther:  Yu Ishihara
+// url:     http://normo.jp
+//
+
+//----------------------------------------------------------------------
+// font
+
+//	@include font-serif
+@mixin font-serif
+	font-family: 'ÉqÉâÉMÉmñæí© Pro W6','Hiragino Mincho Pro','HGSñæí©E','ÇlÇr Çoñæí©',serif
+	
+//	@include font-sans
+@mixin font-sans
+	font-family: 'ÉqÉâÉMÉmäpÉS Pro W3','Hiragino Kaku Gothic Pro','ÉÅÉCÉäÉI',Meiryo,'ÇlÇr ÇoÉSÉVÉbÉN',sans-serif
+
+//----------------------------------------------------------------------
+// web font
+
+//	@include font-opensans
+//	@include font-opensans-book
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600)
+@mixin font-opensans
+	font-family: 'Open Sans', sans-serif
+@mixin font-opensans-book
+	font-family: 'Open Sans', sans-serif
+	font-weight: 300
+@mixin font-opensans-semibold
+	font-family: 'Open Sans', sans-serif
+	font-weight: 600
+
+
+//----------------------------------------------------------------------
+// css3
+
+//	@include alpha(0.80)
+@mixin alpha($val)
+	filter: alpha(opacity=$val*100)
+	-moz-opacity: $val
+	opacity: $val
+
+//	@include round(4px)
+@mixin round($val)
+	border-radius: $val
+	-webkit-border-radius: $val
+	-moz-border-radius: $val
+
+//	@include shadow(1px 1px 3px rgba(0,0,0,0.2))
+@mixin shadow($val)
+	-moz-box-shadow: $val
+	-webkit-box-shadow: $val
+
+
+//----------------------------------------------------------------------
+// selection
+
+//	@include selection(#000, #fff)
+$prefixes: ("-webkit-","-moz-", "-o-", "")
+@mixin selection($color, $background) 
+	@each $prefix in $prefixes 
+		::#{$prefix}selection 
+			color: $color
+			background: $background
+
+//----------------------------------------------------------------------
+// clearfix
+
+//	@include cf
+@mixin cf
+	overflow: hidden
+	*zoom: 1
+
+
+//----------------------------------------------------------------------
+// set
+
+//	@include text-shadow-black
+@mixin text-shadow-black($h: 1px, $v: 1px, $c: rgba( 255, 255, 255, 0.2), $b: 0px)
+	$value: $h $v $b $c
+	-moz-text-shadow: $value
+	-webkit-text-shadow: $value
+	-o-text-shadow: $value
+	text-shadow: $value
+
+//	@include text-shadow-white
+@mixin text-shadow-white($h: -1px, $v: -1px, $c: rgba( 0, 0, 0, 0.2), $b: 0px)
+	$value: $h $v $b $c
+	-moz-text-shadow: $value
+	-webkit-text-shadow: $value
+	-o-text-shadow: $value
+	text-shadow: $value
+
+//	@include shadow-gray
+@mixin shadow-gray
+	@include shadow(-1px -1px 3px rgba(0,0,0,0.2))
+
