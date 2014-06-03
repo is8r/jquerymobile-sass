@@ -1,4 +1,4 @@
-Sass for jQuery Mobile (v1.1.0)
+Sass for jQuery Mobile (v1.4.0)
 
 Description
 -----------
